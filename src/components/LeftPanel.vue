@@ -3,12 +3,12 @@
         <li><h1 class="logo">CV</h1></li>
         <li>
             <router-link to="/">
-                <button class="home-btn"></button>
+                <button class="about-btn"></button>
             </router-link>
         </li>
         <li>
-            <router-link to="/about">
-                <button class="about-btn"></button>
+            <router-link to="/contacts">
+                <button class="contacts-btn"></button>
             </router-link>
         </li>
         <li>
@@ -47,10 +47,12 @@
         outline: none;
         border: none;
         filter: invert(100%);
+        transition: .2s all ease-in-out;
     }
 
-    .home-btn {
-        background-image: url("../assets/Icons/LeftPanel/home.svg");
+    button:hover {
+        cursor: pointer;
+        filter: invert(50%);
     }
 
     .about-btn {
@@ -66,4 +68,10 @@
         background-size: contain;
         margin-top: 100%;
     }
+
+    .contacts-btn {
+        background-image: url("../assets/Icons/LeftPanel/telephone.svg");
+        background-size: contain;
+    }
+
 </style>
