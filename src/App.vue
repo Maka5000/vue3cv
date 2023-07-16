@@ -1,7 +1,7 @@
 <script setup>
-import { RouterView } from "vue-router";
-import LeftPanel from "./components/LeftPanel.vue";
-import MiddlePanel from "./components/MiddlePanel.vue";
+  import { RouterView } from "vue-router";
+  import LeftPanel from "./components/LeftPanel.vue";
+  import MiddlePanel from "./components/MiddlePanel.vue";
 </script>
 
 <template>
@@ -28,6 +28,9 @@ import MiddlePanel from "./components/MiddlePanel.vue";
     padding: 25px 40px;
     margin: 30px 0;
     background-color: blue;
+    transition: .2s all ease-in-out;
+    transform: translateX(-100%);
+    z-index: 0;
   }
 
   section:first-child {
@@ -36,8 +39,12 @@ import MiddlePanel from "./components/MiddlePanel.vue";
 
   section {
     margin-top: 25px;
-    border-bottom: 1px solid gray;
+    border-bottom: 5px solid white;
     padding-bottom: 25px;
+  }
+
+  section:last-child {
+    border: none;
   }
 
   h2 {

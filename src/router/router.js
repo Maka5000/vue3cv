@@ -25,7 +25,12 @@ const routes = [
         path : '/skills',
         name : 'skills',
         component : Skills
-    }
+    },
+    {
+        path : '/download',
+        name : 'download',
+        component : Skills
+    },
 ]
 
 const router = createRouter({

@@ -34,3 +34,18 @@
         </section>
     </div>
 </template>
+
+<style scoped>
+    h3 {
+        margin-top: 17px;
+    }
+
+    p {
+        text-align: justify;
+        text-indent: 15px;
+    }
+
+    li {
+        margin-left: 17px;
+    }
+</style>
