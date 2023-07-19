@@ -29,7 +29,7 @@
     margin: 30px 0;
     background-color: blue;
     transition: .2s all ease-in-out;
-    transform: translateX(-100%);
+    transform: translateX(0);
     z-index: 0;
   }
 

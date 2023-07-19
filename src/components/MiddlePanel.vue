@@ -1,7 +1,7 @@
 <template>
     <div class="photo">
         <div class="photo-description">
-            <h2 class="photo-name">Hasenov Magzhan</h2>
+            <h2 class="photo-name">Khassenov Magzhan</h2>
             <ul class="photo-social">
                 <li class="photo-social-item">
                     <a href="#" class="discord"></a>
@@ -11,6 +11,9 @@
                 </li>
                 <li class="photo-social-item">
                     <a href="#" class="email"></a>
+                </li>
+                <li class="photo-social-item">
+                    <a href="https://github.com/Maka5000?tab=repositories" class="github"></a>
                 </li>
             </ul>
         </div>
@@ -75,5 +78,9 @@
 
     .email {
         background-image: url("../assets/Icons/MIddlePanel/email.svg");
+    }
+
+    .github {
+        background-image: url("../assets/Icons/MIddlePanel/github.svg");
     }
 </style>
