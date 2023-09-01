@@ -51,14 +51,18 @@
         list-style-type: none;
         background-color: blue;
         display: grid;
-        grid-template-rows: 2fr 1fr 1fr 1fr 2fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+        justify-content: center;
         z-index: 1;
     }
 
-    .logo {
-        margin-top: 25px;
-        text-align: center;
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
 
     button {
         width: 100%;
@@ -94,7 +98,6 @@
     .download-btn {
         background-image: url("../assets/Icons/LeftPanel/download.svg");
         background-size: contain;
-        margin-top: 100%;
     }
 
     .contacts-btn {
