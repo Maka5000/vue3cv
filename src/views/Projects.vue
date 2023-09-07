@@ -6,13 +6,28 @@
         <section>
             <ul>
                 <li>
-                    <span class="tel"></span><p>Phone: +7 (775) 796 3210</p>
+                    <a href="https://maka5000-momentum.netlify.app/">
+                        <span class="momentum"></span>
+                        <h3>Momentum</h3>
+                    </a>
                 </li>
                 <li>
-                    <span class="email"></span><p>E-mail: mak.khas02@mail.ru</p>
+                    <a href="https://maka5000.github.io/cssBayan/cssBayan/">
+                        <span class="cssBayan"></span>
+                        <h3>cssBayan</h3>
+                    </a>
                 </li>
                 <li>
-                    <span class="discord"></span><p>Discord: Maka#2223</p>
+                    <a href="https://maka5000.github.io/gallery/">
+                        <span class="gallery"></span>
+                        <h3>Gallery</h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="schoolPlatform"></span>
+                        <h3>SchoolPlatform</h3>
+                    </a>
                 </li>
             </ul>
         </section>
@@ -20,26 +35,66 @@
 </template>
 
 <style scoped>
-    
-    h3 {
-        margin-top: 17px;
+
+    ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
     }
 
     li {
-        margin-left: 17px;
         display: flex;
+        justify-content: center;
         align-items: center;
         column-gap: 5px;
     }
 
-    span {
-        display: block;
-        width: 32px;
-        height: 32px;
-        filter: invert(1);
+    a {
+        text-decoration: none;
+        transition: .2s all ease-in-out;
     }
 
-    p {
-        font-size: 25px;
+    a:hover {
+        transform: scale(1.4);
     }
+
+    h3 {
+        padding-top: 8px;
+        padding-left: 8px;
+        background-color: white;
+        color: blue;
+    }
+
+    span {
+        display: block;
+        width: 250px;
+        height: 125px;
+        background-size: contain;
+    }
+
+    .momentum {
+        background-image: url("../assets/Photo/Projects_img/momentum.jpeg");
+    }
+
+    .cssBayan {
+        background-image: url("../assets/Photo/Projects_img/cssBayan.jpeg");
+    }
+
+    .gallery {
+        background-image: url("../assets/Photo/Projects_img/gallery.jpeg");
+    }
+
+    a:has(> .schoolPlatform) {
+        pointer-events: none;
+    }
+
+    .schoolPlatform {
+        background-image: url("../assets/Photo/Projects_img/schoolPlatform.jpg");
+        background-size: cover;
+    }
+
+    
 </style>
