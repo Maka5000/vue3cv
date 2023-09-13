@@ -9,14 +9,34 @@
                 setTimeout(() => {
                     rightPanel.style.transform = "translateX(0)";
                 }, 200)
+            },
+
+            showModal() {
+                document.querySelector("dialog").showModal();
+            },
+
+            closeModal() {
+                document.querySelector("dialog").close();
+                this.showLangList()
+            },
+
+            showLangList() {
+                const langList = document.querySelector(".lang-list");
+                const langIcon = document.querySelector(".lang-icon");
+
+                langIcon.classList.toggle("show");
+                langList.classList.toggle("show");
             }
         }
     }
 </script>
 
 <template>
-    <ul>
-        <li><h1 class="logo">CV</h1></li>
+    <ul class="left-panel">
+        <li class="settings-btn" @click="showModal"></li>
+        <li>
+            <h1 class="logo">CV</h1>
+        </li>
         <li>
             <button @click="showRightPanel" class="about-btn">
                 <router-link to="/"></router-link>
@@ -43,10 +63,28 @@
             </button>
         </li>
     </ul>
+    <dialog>
+        <span class="modal-close" @click="closeModal"></span>
+        <h2 class="modal-title">Settings</h2>
+        <div class="lang-container">
+            <span>Language:</span>
+            <div @click="showLangList" class="lang-selector">
+                <div class="lang-selected">
+                    <b>English</b>
+                </div>
+                <span class="lang-icon"></span>
+            </div>
+            <div class="lang-list">
+                <div class="lang-item">English</div>
+                <div class="lang-item">Russian</div>
+                <div class="lang-item">Kazakh</div>
+            </div>
+        </div>
+    </dialog>
 </template>
 
 <style scoped>
-    ul {
+    .left-panel {
         margin: 30px 0;
         list-style-type: none;
         background-color: blue;
@@ -55,6 +93,7 @@
         grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
         justify-content: center;
         z-index: 1;
+        position: relative;
     }
 
     li {
@@ -63,6 +102,21 @@
         align-items: center;
     }
 
+    .settings-btn {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        left: 6px;
+        top: 6px;
+        background-image: url("../assets/Icons/LeftPanel/settings.svg");
+        filter: invert(100%);
+        transition: .2s all ease-in-out;
+    }
+
+    .settings-btn:hover {
+        cursor: pointer;
+        filter: invert(50%);
+    }
 
     button {
         width: 100%;
@@ -108,6 +162,110 @@
     .skills-btn {
         background-image: url("../assets/Icons/LeftPanel/skills.png");
         background-size: contain;
+    }
+
+    dialog {
+        top: 20%;
+        left: 35%;
+        padding: 0 200px 200px 200px;
+        position: relative;
+    }
+
+    .modal-title {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .modal-close {
+        width: 40px;
+        height: 40px;
+        background-image: url("../assets/Icons/LeftPanel/close.svg");
+        filter: invert(100%);
+        position: absolute;
+        right: 10px;
+        top: 0;
+        transition: .2s all ease-in-out;
+    }
+
+    .modal-close:hover {
+        cursor: pointer;
+        filter: invert(50%);
+    }
+
+    .lang-container {
+        display: flex;
+        font-size: 23px;
+        column-gap: 20px;
+        position: relative;
+    }
+
+    .lang-selector {
+        display: flex;
+        column-gap: 5px;
+        border-bottom: 1px solid white;
+        transition: .2s all ease;
+    }
+
+    .lang-selector:hover {
+        cursor: pointer;
+        opacity: 50%;
+    }
+
+    .lang-list {
+        position: absolute;
+        top: 100%;
+        right: 40px;
+        text-align: center;
+        transition: .2s all ease-in-out;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .lang-item {
+        position: relative;
+    }
+
+    .lang-item:hover::after {
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .lang-item::after {
+        content: "";
+        width: 0;
+        border-bottom: 1px solid white;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        transition: .2s all ease-in-out;
+    }
+
+    .lang-icon {
+        display: block;
+        width: 32px;
+        height: 32px;
+        background-image: url("../assets/Icons/LeftPanel/triangle.svg");
+        background-size: contain;
+        filter: invert(100%);
+        transition: .2s all ease-in-out;
+    }
+
+    .lang-icon.show {
+        rotate: 180deg;
+    }
+
+    .lang-list.show {
+        transform: translateY(0);
+        opacity: 100%;
+        pointer-events: all;
+    }
+
+    @media (max-width : 420px) {
+        .left-panel {
+            display: none;
+        }
     }
 
 </style>

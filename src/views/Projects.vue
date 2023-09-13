@@ -96,5 +96,9 @@
         background-size: cover;
     }
 
-    
+    @media (max-width: 420px) {
+        ul {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

@@ -2,10 +2,12 @@
   import { RouterView } from "vue-router";
   import LeftPanel from "./components/LeftPanel.vue";
   import MiddlePanel from "./components/MiddlePanel.vue";
+  import MenuBar from "./components/MenuBar.vue"
 </script>
 
 <template>
   <main>
+    <MenuBar />
     <LeftPanel />
     <MiddlePanel />
     <div class="right-panel">
@@ -15,6 +17,10 @@
 </template>
 
 <style>
+  .menu-bar {
+    display: none;
+  }
+
   main {
     width: 100%;
     max-width: 1280px;
@@ -49,5 +55,22 @@
 
   h2 {
     font-size: 35px;
+  }
+
+  @media (max-width: 420px) {
+    main {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .photo {
+      height: 100vh;
+    }
+
+    .right-panel {
+      margin: 0;
+      padding: 25px 30px 25px 30px;
+    }
   }
 </style>
