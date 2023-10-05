@@ -57,7 +57,7 @@
     font-size: 35px;
   }
 
-  @media (max-width: 420px) {
+  @media (max-width: 768px) {
     main {
       display: flex;
       flex-direction: column;

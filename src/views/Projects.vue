@@ -42,7 +42,7 @@
         grid-template-rows: repeat(auto-fit, minmax(120px, 1fr));
         justify-content: center;
         align-items: center;
-        row-gap: 20px;
+        gap: 20px;
     }
 
     li {
@@ -55,6 +55,8 @@
     a {
         text-decoration: none;
         transition: .2s all ease-in-out;
+        width: 100%;
+        max-width: 250px;
     }
 
     a:hover {
@@ -70,9 +72,11 @@
 
     span {
         display: block;
-        width: 250px;
+        width: 100%;
         height: 125px;
         background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center bottom;
     }
 
     .momentum {
@@ -96,9 +100,10 @@
         background-size: cover;
     }
 
-    @media (max-width: 420px) {
+    @media (max-width: 620px) {
         ul {
             grid-template-columns: 1fr;
         }
     }
+
 </style>

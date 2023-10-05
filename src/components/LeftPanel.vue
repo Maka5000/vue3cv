@@ -17,7 +17,11 @@
 
             closeModal() {
                 document.querySelector("dialog").close();
-                this.showLangList()
+                const langList = document.querySelector(".lang-list");
+                
+                if (langList.classList.contains("show")) {
+                    this.showLangList();
+                }
             },
 
             showLangList() {
@@ -262,10 +266,23 @@
         pointer-events: all;
     }
 
-    @media (max-width : 420px) {
+    @media (max-width : 768px) {
         .left-panel {
             display: none;
         }
+
+        dialog {
+            left: 0;
+            padding: 0;
+            margin: 0 auto;
+            position: fixed;
+            padding: 0 60px 200px 60px;
+        }
+
+        .modal-title {
+            font-size: 25px;
+        }
+
     }
 
 </style>
