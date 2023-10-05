@@ -27,9 +27,9 @@
         <section>
             <h2>Languages</h2>
             <ul>
-                <li>Kazakh - Native</li>
-                <li>Russian - Intermediate / Upper-intermediate (2nd language)</li>
-                <li>English - Intermediate (B1)</li>
+                <li><span class="kazakh"></span>Kazakh - Native</li>
+                <li><span class="russia"></span>Russian - Intermediate / Upper-intermediate (2nd language)</li>
+                <li><span class="english"></span>English - Intermediate (B1)</li>
             </ul>
         </section>
     </div>
@@ -46,6 +46,38 @@
     }
 
     li {
+        display: flex;
+        align-items: center;
         margin-left: 17px;
+    }
+
+    .kazakh {
+        display: block;
+        background-image: url("../assets/Icons/About/kazakhstan.svg");
+        width: 32px;
+        height: 32px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .russia {
+        display: block;
+        background-image: url("../assets/Icons/About/russia.svg");
+        width: 32px;
+        height: 32px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .english {
+        display: block;
+        background-image: url("../assets/Icons/About/uk.png");
+        width: 32px;
+        height: 32px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 </style>
