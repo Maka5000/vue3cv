@@ -54,5 +54,11 @@
         "section3" : {
             "title" : "Beginner"
         }
+    },
+
+    "projects" : {
+        "section1" : {
+            "title" : "Projects"
+        }
     }
 }

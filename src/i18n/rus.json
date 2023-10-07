@@ -54,5 +54,11 @@
         "section3" : {
             "title" : "Изучаю"
         }
+    },
+
+    "projects" : {
+        "section1" : {
+            "title" : "Проекты"
+        }
     }
 }

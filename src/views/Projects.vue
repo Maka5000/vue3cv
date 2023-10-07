@@ -1,7 +1,8 @@
+<script></script>
 <template>
     <div>
         <section>
-            <h2>Projects</h2>
+            <h2>{{ $t('projects.section1.title') }}</h2>
         </section>
         <section>
             <ul>
