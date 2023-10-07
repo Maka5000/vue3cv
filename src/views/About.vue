@@ -1,7 +1,9 @@
+<script>
+</script>
 <template>
     <div>
         <section>
-            <h2>About me</h2>
+            <h2>{{ $t('message.about') }}</h2>
             <p>
                 I was born in 09.30.2001 in the country of Kazakhstan, in the city of Astana. 
                 I have no work experience, but I have a very great desire to learn programming. 
