@@ -60,5 +60,9 @@
         "section1" : {
             "title" : "Projects"
         }
+    },
+
+    "photo" : {
+        "name" : "Khassenov Magzhan"
     }
 }

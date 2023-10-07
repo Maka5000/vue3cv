@@ -1,7 +1,8 @@
+<script></script>
 <template>
     <div class="photo">
         <div class="photo-description">
-            <h2 class="photo-name">Khassenov Magzhan</h2>
+            <h2 class="photo-name">{{ $t('photo.name') }}</h2>
             <ul class="photo-social">
                 <li class="photo-social-item">
                     <a href="#" class="discord"></a>
