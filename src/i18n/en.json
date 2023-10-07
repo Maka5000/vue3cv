@@ -1,5 +1,33 @@
 {
-    "message" : {
-        "about" : "About me"
+    "about" : {
+        "section1" : {
+            "title" : "About me",
+            "myhistory" : [
+                "I was born in 09.30.2001 in the country of Kazakhstan, in the city of Astana.", 
+                "I have no work experience, but I have a very great desire to learn programming.", 
+                "Since I was a teenager, I have been very interested in programming because it looks like a constructor of your capabilities and ideas.",
+                "I perceive programming environments as a canvas, and a programmer as an artist drawing an amazing world.",
+                "And it always fascinated me, the way pieces of code come to life in front of the user.", 
+                "I always wanted to do it myself. For this reason, I started to study programming on my own,",
+                "and I think I have reached a good level, but still in order to improve my skills I try to study more frameworks and tools."
+            ]
+        },
+        
+        "section2" : {
+            "title" : "Education",
+            "subtitle1" : {
+                "content" : "Master's degree",
+                "description" : "Turan-Astana University program: “Information Systems”"
+            }
+        },
+
+        "section3" : {
+            "title" : "Languages",
+            "langList" : [
+                "Kazakh - Native", 
+                "Russian - Intermediate / Upper-intermediate (2nd language)",
+                "English - Intermediate (B1)"
+            ]
+        }
     }
 }
