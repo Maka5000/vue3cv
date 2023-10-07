@@ -29,5 +29,16 @@
                 "Английский - Intermediate (B1)"
             ]
         }
+    },
+
+    "contacts" : {
+        "section1" : {
+            "title" : "Контакты"
+        },
+
+        "section2" : {
+            "phone" : "Телефон:",
+            "discord" : "Дискорд:"
+        }
     }
 }

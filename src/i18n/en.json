@@ -29,5 +29,16 @@
                 "English - Intermediate (B1)"
             ]
         }
+    },
+
+    "contacts" : {
+        "section1" : {
+            "title" : "Contacts"
+        },
+
+        "section2" : {
+            "phone" : "Phone:",
+            "discord" : "Discord:"
+        }
     }
 }

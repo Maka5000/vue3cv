@@ -1,18 +1,19 @@
+<script></script>
 <template>
     <div>
         <section>
-            <h2>Contacts</h2>
+            <h2>{{ $t('contacts.section1.title') }}</h2>
         </section>
         <section>
             <ul>
                 <li>
-                    <span class="tel"></span><p>Phone: +7 (775) 796 3210</p>
+                    <span class="tel"></span><p>{{ $t('contacts.section2.phone') }} +7 (775) 796 3210</p>
                 </li>
                 <li>
                     <span class="email"></span><p>E-mail: mak.khas02@mail.ru</p>
                 </li>
                 <li>
-                    <span class="discord"></span><p>Discord: Maka#2223</p>
+                    <span class="discord"></span><p>{{ $t('contacts.section2.discord') }} Maka#2223</p>
                 </li>
             </ul>
         </section>
