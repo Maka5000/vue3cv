@@ -1,10 +1,11 @@
+<script></script>
 <template>
     <div>
         <section>
-            <h2>Skills</h2>
+            <h2>{{ $t('skills.section1.title') }}</h2>
         </section>
         <section>
-            <h2>Basics</h2>
+            <h2>{{ $t('skills.section2.title') }}</h2>
             <ul>
                 <li>
                     <span class="js-icon"></span><p>JavaScript</p>
@@ -30,7 +31,7 @@
             </ul>
         </section>
         <section>
-            <h2>Beginner</h2>
+            <h2>{{ $t('skills.section3.title') }}</h2>
             <ul>
                 <li>
                     <span class="vue-icon"></span><p>Vue</p>

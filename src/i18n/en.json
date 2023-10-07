@@ -40,5 +40,19 @@
             "phone" : "Phone:",
             "discord" : "Discord:"
         }
+    },
+
+    "skills" : {
+        "section1" : {
+            "title" : "Skills"
+        },
+
+        "section2" : {
+            "title" : "Basics"
+        },
+
+        "section3" : {
+            "title" : "Beginner"
+        }
     }
 }

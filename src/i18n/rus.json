@@ -40,5 +40,19 @@
             "phone" : "Телефон:",
             "discord" : "Дискорд:"
         }
+    },
+
+    "skills" : {
+        "section1" : {
+            "title" : "Умения"
+        },
+
+        "section2" : {
+            "title" : "Базовые"
+        },
+
+        "section3" : {
+            "title" : "Изучаю"
+        }
     }
 }
