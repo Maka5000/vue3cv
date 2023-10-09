@@ -1,38 +1,38 @@
 <script>
-    export default {
-        methods: {
-            showRightPanel() {
-                const rightPanel = document.querySelector(".right-panel");
+export default {
+    methods: {
+        showRightPanel() {
+            const rightPanel = document.querySelector(".right-panel");
 
-                rightPanel.style.transform = "translateX(-100%)";
+            rightPanel.style.transform = "translateX(-100%)";
 
-                setTimeout(() => {
-                    rightPanel.style.transform = "translateX(0)";
-                }, 200)
-            },
+            setTimeout(() => {
+                rightPanel.style.transform = "translateX(0)";
+            }, 200)
+        },
 
-            showModal() {
-                document.querySelector("dialog").showModal();
-            },
+        showModal() {
+            document.querySelector("dialog").showModal();
+        },
 
-            closeModal() {
-                document.querySelector("dialog").close();
-                const langList = document.querySelector(".lang-list");
-                
-                if (langList.classList.contains("show")) {
-                    this.showLangList();
-                }
-            },
+        closeModal() {
+            document.querySelector("dialog").close();
+            const langList = document.querySelector(".lang-list");
 
-            showLangList() {
-                const langList = document.querySelector(".lang-list");
-                const langIcon = document.querySelector(".lang-icon");
-
-                langIcon.classList.toggle("show");
-                langList.classList.toggle("show");
+            if (langList.classList.contains("show")) {
+                this.showLangList();
             }
+        },
+
+        showLangList() {
+            const langList = document.querySelector(".lang-list");
+            const langIcon = document.querySelector(".lang-icon");
+
+            langIcon.classList.toggle("show");
+            langList.classList.toggle("show");
         }
     }
+}
 </script>
 
 <template>
@@ -59,7 +59,7 @@
         <li>
             <button @click="showRightPanel" class="projects-btn">
                 <router-link to="/projects"></router-link>
-            </button>   
+            </button>
         </li>
         <li>
             <button class="download-btn">
@@ -79,210 +79,210 @@
                 <span class="lang-icon"></span>
             </div>
             <div class="lang-list">
-                <div class="lang-item">English</div>
-                <div class="lang-item">Russian</div>
-                <div class="lang-item">Kazakh</div>
+                    <div class="lang-item">English</div>
+                    <div class="lang-item">Русский</div>
+                    <div class="lang-item">Қазақша</div>
             </div>
         </div>
     </dialog>
 </template>
 
 <style scoped>
+.left-panel {
+    margin: 30px 0;
+    list-style-type: none;
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-btn {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    background-image: url("../assets/Icons/LeftPanel/settings.svg");
+    filter: invert(100%);
+    transition: .2s all ease-in-out;
+}
+
+.settings-btn:hover {
+    cursor: pointer;
+    filter: invert(50%);
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
+    border: none;
+    filter: invert(100%);
+    transition: .2s all ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: invert(50%);
+}
+
+a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.about-btn {
+    background-image: url("../assets/Icons/LeftPanel/aboutme.svg");
+}
+
+.projects-btn {
+    background-image: url("../assets/Icons/LeftPanel/projects.svg");
+}
+
+.download-btn {
+    background-image: url("../assets/Icons/LeftPanel/download.svg");
+    background-size: contain;
+}
+
+.contacts-btn {
+    background-image: url("../assets/Icons/LeftPanel/telephone.svg");
+    background-size: contain;
+}
+
+.skills-btn {
+    background-image: url("../assets/Icons/LeftPanel/skills.png");
+    background-size: contain;
+}
+
+dialog {
+    top: 20%;
+    left: 35%;
+    padding: 0 200px 200px 200px;
+    position: relative;
+}
+
+.modal-title {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.modal-close {
+    width: 40px;
+    height: 40px;
+    background-image: url("../assets/Icons/LeftPanel/close.svg");
+    filter: invert(100%);
+    position: absolute;
+    right: 10px;
+    top: 0;
+    transition: .2s all ease-in-out;
+}
+
+.modal-close:hover {
+    cursor: pointer;
+    filter: invert(50%);
+}
+
+.lang-container {
+    display: flex;
+    font-size: 23px;
+    column-gap: 20px;
+    position: relative;
+}
+
+.lang-selector {
+    display: flex;
+    column-gap: 5px;
+    border-bottom: 1px solid white;
+    transition: .2s all ease;
+    position: relative;
+}
+
+.lang-selector:hover {
+    cursor: pointer;
+    opacity: 50%;
+}
+
+.lang-list {
+    position: absolute;
+    top: 100%;
+    right: 18px;
+    text-align: center;
+    transition: .2s all ease-in-out;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.lang-item {
+    position: relative;
+}
+
+.lang-item:hover::after {
+    cursor: pointer;
+    width: 100%;
+}
+
+.lang-item::after {
+    content: "";
+    width: 0;
+    border-bottom: 1px solid white;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    transition: .2s all ease-in-out;
+}
+
+.lang-icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url("../assets/Icons/LeftPanel/triangle.svg");
+    background-size: contain;
+    filter: invert(100%);
+    transition: .2s all ease-in-out;
+}
+
+.lang-icon.show {
+    rotate: 180deg;
+}
+
+.lang-list.show {
+    transform: translateY(0);
+    opacity: 100%;
+    pointer-events: all;
+}
+
+@media (max-width : 768px) {
     .left-panel {
-        margin: 30px 0;
-        list-style-type: none;
-        background-color: blue;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-        justify-content: center;
-        z-index: 1;
-        position: relative;
-    }
-
-    li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .settings-btn {
-        width: 25px;
-        height: 25px;
-        position: absolute;
-        left: 6px;
-        top: 6px;
-        background-image: url("../assets/Icons/LeftPanel/settings.svg");
-        filter: invert(100%);
-        transition: .2s all ease-in-out;
-    }
-
-    .settings-btn:hover {
-        cursor: pointer;
-        filter: invert(50%);
-    }
-
-    button {
-        width: 100%;
-        height: 50px;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-position: center;
-        outline: none;
-        border: none;
-        filter: invert(100%);
-        transition: .2s all ease-in-out;
-    }
-
-    button:hover {
-        cursor: pointer;
-        filter: invert(50%);
-    }
-
-    a {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-
-    .about-btn {
-        background-image: url("../assets/Icons/LeftPanel/aboutme.svg");
-    }
-
-    .projects-btn {
-        background-image: url("../assets/Icons/LeftPanel/projects.svg");
-    }
-
-    .download-btn {
-        background-image: url("../assets/Icons/LeftPanel/download.svg");
-        background-size: contain;
-    }
-
-    .contacts-btn {
-        background-image: url("../assets/Icons/LeftPanel/telephone.svg");
-        background-size: contain;
-    }
-
-    .skills-btn {
-        background-image: url("../assets/Icons/LeftPanel/skills.png");
-        background-size: contain;
+        display: none;
     }
 
     dialog {
-        top: 20%;
-        left: 35%;
-        padding: 0 200px 200px 200px;
-        position: relative;
+        left: 0;
+        padding: 0;
+        margin: 0 auto;
+        position: fixed;
+        padding: 0 60px 200px 60px;
     }
 
     .modal-title {
-        margin-top: 20px;
-        margin-bottom: 30px;
-        text-align: center;
+        font-size: 25px;
     }
 
-    .modal-close {
-        width: 40px;
-        height: 40px;
-        background-image: url("../assets/Icons/LeftPanel/close.svg");
-        filter: invert(100%);
-        position: absolute;
-        right: 10px;
-        top: 0;
-        transition: .2s all ease-in-out;
-    }
-
-    .modal-close:hover {
-        cursor: pointer;
-        filter: invert(50%);
-    }
-
-    .lang-container {
-        display: flex;
-        font-size: 23px;
-        column-gap: 20px;
-        position: relative;
-    }
-
-    .lang-selector {
-        display: flex;
-        column-gap: 5px;
-        border-bottom: 1px solid white;
-        transition: .2s all ease;
-    }
-
-    .lang-selector:hover {
-        cursor: pointer;
-        opacity: 50%;
-    }
-
-    .lang-list {
-        position: absolute;
-        top: 100%;
-        right: 40px;
-        text-align: center;
-        transition: .2s all ease-in-out;
-        transform: translateY(-100%);
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .lang-item {
-        position: relative;
-    }
-
-    .lang-item:hover::after {
-        cursor: pointer;
-        width: 100%;
-    }
-
-    .lang-item::after {
-        content: "";
-        width: 0;
-        border-bottom: 1px solid white;
-        position: absolute;
-        left: 0;
-        top: 100%;
-        transition: .2s all ease-in-out;
-    }
-
-    .lang-icon {
-        display: block;
-        width: 32px;
-        height: 32px;
-        background-image: url("../assets/Icons/LeftPanel/triangle.svg");
-        background-size: contain;
-        filter: invert(100%);
-        transition: .2s all ease-in-out;
-    }
-
-    .lang-icon.show {
-        rotate: 180deg;
-    }
-
-    .lang-list.show {
-        transform: translateY(0);
-        opacity: 100%;
-        pointer-events: all;
-    }
-
-    @media (max-width : 768px) {
-        .left-panel {
-            display: none;
-        }
-
-        dialog {
-            left: 0;
-            padding: 0;
-            margin: 0 auto;
-            position: fixed;
-            padding: 0 60px 200px 60px;
-        }
-
-        .modal-title {
-            font-size: 25px;
-        }
-
-    }
-
+}
 </style>
