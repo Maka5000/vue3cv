@@ -18,6 +18,10 @@
             "subtitle1" : {
                 "content" : "Master's degree",
                 "description" : "Turan-Astana University program: “Information Systems”"
+            },
+
+            "subtitle2" : {
+                "content" : "Courses"
             }
         },
 
