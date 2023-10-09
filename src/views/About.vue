@@ -14,7 +14,7 @@
             <ul>
                 <li>{{ $t('about.section2.subtitle1.description') }}</li>
             </ul>
-            <h3>Courses</h3>
+            <h3>{{ $t('about.section2.subtitle2.content') }}</h3>
             <ul>
                 <li>HTML and CSS course</li>
                 <li>RS School Course “JS / Front-End Stage 0”</li>
