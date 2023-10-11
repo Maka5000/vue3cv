@@ -30,6 +30,13 @@ export default {
 
             langIcon.classList.toggle("show");
             langList.classList.toggle("show");
+        },
+
+        changeLocale(event) {
+            const langSelected = document.querySelector(".lang-selected");
+            
+            langSelected.textContent = event.target.textContent;
+            this.$i18n.locale = event.target.dataset.locale
         }
     }
 }
@@ -79,9 +86,9 @@ export default {
                 <span class="lang-icon"></span>
             </div>
             <div class="lang-list">
-                    <div class="lang-item">English</div>
-                    <div class="lang-item">Русский</div>
-                    <div class="lang-item">Қазақша</div>
+                    <div class="lang-item" data-locale="en" @click="changeLocale($event)">English</div>
+                    <div class="lang-item" data-locale="rus" @click="changeLocale($event)">Русский</div>
+                    <div class="lang-item" data-locale="kz" @click="changeLocale($event)">Қазақша</div>
             </div>
         </div>
     </dialog>
@@ -232,8 +239,11 @@ dialog {
     position: relative;
 }
 
-.lang-item:hover::after {
+.lang-item:hover {
     cursor: pointer;
+}
+
+.lang-item:hover::after {
     width: 100%;
 }
 
