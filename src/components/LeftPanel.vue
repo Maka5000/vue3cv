@@ -37,6 +37,8 @@ export default {
             
             langSelected.textContent = event.target.textContent;
             this.$i18n.locale = event.target.dataset.locale
+
+            localStorage.setItem("locale", event.target.dataset.locale);
         }
     }
 }
