@@ -93,6 +93,15 @@ export default {
                     <div class="lang-item" data-locale="kz" @click="changeLocale($event)">Қазақша</div>
             </div>
         </div>
+        <div class="switch-container">
+            <span>Theme:</span>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+                <span class="sun"></span>
+                <span class="moon"></span>
+            </label>
+        </div>
     </dialog>
 </template>
 
@@ -235,6 +244,8 @@ dialog {
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
+    z-index: 2;
+    background-color: black;
 }
 
 .lang-item {
@@ -277,6 +288,88 @@ dialog {
     transform: translateY(0);
     opacity: 100%;
     pointer-events: all;
+}
+
+.switch-container {
+    display: flex;
+    font-size: 23px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider::before {
+    transform: translateX(36px);
+}
+
+.sun {
+    display: inline-block;
+    background-image: url("../assets/Icons/LeftPanel/modal/sun.svg");
+    background-size: contain;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 6px;
+    top: 7px;
+    pointer-events: none;
+    filter: invert(100%);
+}
+
+.moon {
+    display: inline-block;
+    background-image: url("../assets/Icons/LeftPanel/modal/moon.svg");
+    background-size: contain;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 6px;
+    top: 7px;
+    pointer-events: none;
 }
 
 @media (max-width : 768px) {
