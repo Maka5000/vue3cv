@@ -191,6 +191,8 @@ dialog {
     left: 35%;
     padding: 0 200px 200px 200px;
     position: relative;
+    width: 100%;
+    max-width: 640px;
 }
 
 .modal-title {
@@ -220,6 +222,7 @@ dialog {
     font-size: 23px;
     column-gap: 20px;
     position: relative;
+    justify-content: space-between;
 }
 
 .lang-selector {

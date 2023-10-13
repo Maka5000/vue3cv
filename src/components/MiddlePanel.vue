@@ -84,4 +84,10 @@
     .github {
         background-image: url("../assets/Icons/MIddlePanel/github.svg");
     }
+
+    @media (max-width : 400px) {
+        .photo-name {
+            font-size: 20px;
+        }
+    }
 </style>
