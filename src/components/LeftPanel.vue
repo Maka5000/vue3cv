@@ -78,9 +78,9 @@ export default {
     </ul>
     <dialog>
         <span class="modal-close" @click="closeModal"></span>
-        <h2 class="modal-title">Settings</h2>
+        <h2 class="modal-title">{{ $t('modal.title') }}</h2>
         <div class="lang-container">
-            <span>Language:</span>
+            <span>{{ $t('modal.language.title') }}</span>
             <div @click="showLangList" class="lang-selector">
                 <div class="lang-selected">
                     <b>English</b>
@@ -94,7 +94,7 @@ export default {
             </div>
         </div>
         <div class="switch-container">
-            <span>Theme:</span>
+            <span>{{ $t('modal.theme.title') }}</span>
             <label class="switch">
                 <input type="checkbox" checked>
                 <span class="slider round"></span>

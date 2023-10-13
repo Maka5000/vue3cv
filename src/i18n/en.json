@@ -68,5 +68,21 @@
 
     "photo" : {
         "name" : "Khassenov Magzhan"
+    },
+
+    "modal" : {
+        "title" : "Settings",
+
+        "language" : {
+            "title" : "Language:"
+        },
+        
+        "theme" : {
+            "title" : "Theme"
+        }
+    },
+
+    "menubar" : {
+        "download" : "Download"
     }
 }

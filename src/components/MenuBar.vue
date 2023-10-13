@@ -30,27 +30,27 @@ export default {
         <ul class="menu-container">
             <li>
                 <button @click="showMenu" class="about-btn">
-                    <router-link to="/">About me</router-link>
+                    <router-link to="/">{{ $t('about.section1.title') }}</router-link>
                 </button>
             </li>
             <li>
                 <button @click="showMenu" class="contacts-btn">
-                    <router-link to="/contacts">Contacts</router-link>
+                    <router-link to="/contacts">{{ $t('contacts.section1.title') }}</router-link>
                 </button>
             </li>
             <li>
                 <button @click="showMenu" class="skills-btn">
-                    <router-link to="/skills">Skills</router-link>
+                    <router-link to="/skills">{{ $t('skills.section1.title') }}</router-link>
                 </button>
             </li>
             <li>
                 <button @click="showMenu" class="projects-btn">
-                    <router-link to="/projects">Projects</router-link>
+                    <router-link to="/projects">{{ $t('projects.section1.title') }}</router-link>
                 </button>
             </li>
             <li>
                 <button @click="showMenu" class="download-btn">
-                    <router-link to="/download">Download</router-link>
+                    <router-link to="/download">{{ $t('menubar.download') }}</router-link>
                 </button>
             </li>
         </ul>
