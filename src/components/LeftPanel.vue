@@ -35,10 +35,18 @@ export default {
         changeLocale(event) {
             const langSelected = document.querySelector(".lang-selected");
             
-            langSelected.textContent = event.target.textContent;
+            langSelected.textContent = event.target.textContent
             this.$i18n.locale = event.target.dataset.locale
 
             localStorage.setItem("locale", event.target.dataset.locale);
+            
+            localStorage.setItem("selectedLanguage", event.target.textContent);
+        },
+    },
+
+    data() {
+        return {
+            selectedLang : localStorage.getItem("selectedLanguage")
         }
     }
 }
@@ -82,7 +90,10 @@ export default {
         <div class="lang-container">
             <span>{{ $t('modal.language.title') }}</span>
             <div @click="showLangList" class="lang-selector">
-                <div class="lang-selected">
+                <div v-if="selectedLang" class="lang-selected">
+                    <b>{{ selectedLang }}</b>
+                </div>
+                <div v-else class="lang-selected">
                     <b>English</b>
                 </div>
                 <span class="lang-icon"></span>
