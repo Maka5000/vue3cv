@@ -67,8 +67,8 @@
     h3 {
         padding-top: 8px;
         padding-left: 8px;
-        background-color: white;
-        color: blue;
+        background-color: var(--background-color);
+        color: var(--main-color);
     }
 
     span {

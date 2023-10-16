@@ -120,7 +120,7 @@ export default {
 .left-panel {
     margin: 30px 0;
     list-style-type: none;
-    background-color: blue;
+    background-color: var(--main-color);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
@@ -142,13 +142,12 @@ li {
     left: 6px;
     top: 6px;
     background-image: url("../assets/Icons/LeftPanel/settings.svg");
-    filter: invert(100%);
     transition: .2s all ease-in-out;
 }
 
 .settings-btn:hover {
     cursor: pointer;
-    filter: invert(50%);
+    filter: invert(65%);
 }
 
 button {
@@ -159,13 +158,12 @@ button {
     background-position: center;
     outline: none;
     border: none;
-    filter: invert(100%);
     transition: .2s all ease-in-out;
 }
 
 button:hover {
     cursor: pointer;
-    filter: invert(50%);
+    filter: invert(65%);
 }
 
 a {
@@ -204,6 +202,8 @@ dialog {
     position: relative;
     width: 100%;
     max-width: 640px;
+    background-color: var(--dialog-color);
+    color: var(--dialog-font-color);
 }
 
 .modal-title {
@@ -264,10 +264,13 @@ dialog {
 
 .lang-item {
     position: relative;
+    color: white;
+    transition: .2s all ease-in-out;
 }
 
 .lang-item:hover {
     cursor: pointer;
+    color: black;
 }
 
 .lang-item:hover::after {
@@ -277,11 +280,14 @@ dialog {
 .lang-item::after {
     content: "";
     width: 0;
-    border-bottom: 1px solid white;
+    height: 100%;
+    background-color: var(--main-color);
+    /* border-bottom: 1px solid white; */
     position: absolute;
     left: 0;
-    top: 100%;
+    top: 0;
     transition: .2s all ease-in-out;
+    z-index: -1;
 }
 
 .lang-icon {
@@ -290,7 +296,6 @@ dialog {
     height: 32px;
     background-image: url("../assets/Icons/LeftPanel/triangle.svg");
     background-size: contain;
-    filter: invert(100%);
     transition: .2s all ease-in-out;
 }
 

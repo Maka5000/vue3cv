@@ -17,6 +17,12 @@
 </template>
 
 <style>
+
+  html {
+    background-color: var(--background-color);
+    color: var(--font-color)
+  }
+
   .menu-bar {
     display: none;
   }
@@ -33,7 +39,7 @@
   .right-panel {
     padding: 25px 40px;
     margin: 30px 0;
-    background-color: blue;
+    background-color: var(--main-color);
     transition: .2s all ease-in-out;
     transform: translateX(0);
     z-index: 0;
@@ -45,7 +51,7 @@
 
   section {
     margin-top: 25px;
-    border-bottom: 5px solid white;
+    border-bottom: 5px solid var(--line-color);
     padding-bottom: 25px;
   }
 

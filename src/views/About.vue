@@ -42,38 +42,40 @@
     }
 
     li {
-        display: flex;
-        align-items: center;
+        list-style: circle;
         margin-left: 17px;
     }
 
     .kazakh {
-        display: block;
+        display: inline-block;
         background-image: url("../assets/Icons/About/kazakhstan.svg");
         width: 32px;
         height: 32px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        vertical-align: middle;
     }
 
     .russia {
-        display: block;
+        display: inline-block;
         background-image: url("../assets/Icons/About/russia.svg");
         width: 32px;
         height: 32px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        vertical-align: middle;
     }
 
     .english {
-        display: block;
+        display: inline-block;
         background-image: url("../assets/Icons/About/uk.png");
         width: 32px;
         height: 32px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        vertical-align: middle;
     }
 </style>

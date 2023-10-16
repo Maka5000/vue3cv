@@ -29,6 +29,7 @@
         background-size: cover;
         position: relative;
         z-index: 1;
+        box-shadow: 0 0 10px 0 var(--main-shadow);
     }
 
     .photo-description {
@@ -43,6 +44,7 @@
     .photo-name {
         font-size: 50px;
         margin-bottom: 15px;
+        color: white;
     }
 
     .photo-social {
