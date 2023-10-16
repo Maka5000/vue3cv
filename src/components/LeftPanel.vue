@@ -202,8 +202,8 @@ dialog {
     position: relative;
     width: 100%;
     max-width: 640px;
-    background-color: var(--dialog-color);
-    color: var(--dialog-font-color);
+    background-color: var(--background-color);
+    color: var(--font-color);
 }
 
 .modal-title {

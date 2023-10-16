@@ -68,7 +68,7 @@
         padding-top: 8px;
         padding-left: 8px;
         background-color: var(--background-color);
-        color: var(--main-color);
+        color: var(--font-color);
     }
 
     span {
