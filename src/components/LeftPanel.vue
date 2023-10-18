@@ -42,11 +42,82 @@ export default {
             
             localStorage.setItem("selectedLanguage", event.target.textContent);
         },
+
+        changeTheme() {
+            const root = document.querySelector("html");
+            const leftPanelBtns = document.querySelectorAll("button");
+            const langIcon = document.querySelector(".lang-icon");
+            const fullSettingsBtn = document.querySelector("li.settings-btn");
+
+            const settingBtn = document.querySelector(".settings-btn");
+            const contactsIcons = document.querySelectorAll("li > span");
+
+            const checkbox = document.querySelector(".switch").querySelector("input");
+
+            root.classList.toggle("dark-mode")
+
+            leftPanelBtns.forEach(btn => {
+                this.invertColor(btn)
+            })
+
+            contactsIcons.forEach(icon => {
+                this.invertColor(icon)
+            });
+
+            this.invertColor(langIcon)
+            this.invertColor(fullSettingsBtn)
+            this.invertColor(settingBtn)
+
+            localStorage.setItem("switchStatus", checkbox.checked)
+        },
+
+        invertColor(element) {
+            if(element.style.filter === "" || element.style.filter === "invert(0)") {
+                    element.style.filter = "invert(100%)"
+                } else {
+                    element.style.filter = "invert(0)"
+                }
+        }, 
     },
 
     data() {
         return {
-            selectedLang : localStorage.getItem("selectedLanguage")
+            selectedLang : localStorage.getItem("selectedLanguage"),
+            switchStatus : localStorage.getItem("switchStatus") ? localStorage.getItem("switchStatus") === 'true' : true
+        }
+    },
+
+    mounted() {
+        const langIcon = document.querySelector(".lang-icon");
+        const fullSettingsBtn = document.querySelector("li.settings-btn");
+        const leftPanelBtns = document.querySelectorAll("button");
+
+        if(localStorage.getItem("switchStatus")) {
+
+            if(localStorage.getItem("switchStatus") === 'false') {
+                langIcon.style.filter = "invert(100%)";
+                fullSettingsBtn.style.filter = "invert(100%)";
+
+                leftPanelBtns.forEach(btn => {
+                    btn.style.filter = "invert(100%)"
+                });
+            } else {
+                langIcon.style.filter = "invert(0)";
+                fullSettingsBtn.style.filter = "invert(0)";
+
+                leftPanelBtns.forEach(btn => {
+                    btn.style.filter = "invert(0)"
+                });
+            }
+            
+        } else {
+
+            langIcon.style.filter = "invert(0)";
+            fullSettingsBtn.style.filter = "invert(0)";
+
+            leftPanelBtns.forEach(btn => {
+                btn.style.filter = "invert(0)"
+            });
         }
     }
 }
@@ -107,7 +178,7 @@ export default {
         <div class="switch-container">
             <span>{{ $t('modal.theme.title') }}</span>
             <label class="switch">
-                <input type="checkbox" checked>
+                <input @click="changeTheme" type="checkbox" :checked="switchStatus">
                 <span class="slider round"></span>
                 <span class="sun"></span>
                 <span class="moon"></span>
@@ -147,7 +218,7 @@ li {
 
 .settings-btn:hover {
     cursor: pointer;
-    filter: invert(65%);
+    opacity: 35%;
 }
 
 button {
@@ -163,7 +234,7 @@ button {
 
 button:hover {
     cursor: pointer;
-    filter: invert(65%);
+    opacity: 35%;
 }
 
 a {
@@ -239,7 +310,7 @@ dialog {
 .lang-selector {
     display: flex;
     column-gap: 5px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--line-color);
     transition: .2s all ease;
     position: relative;
 }

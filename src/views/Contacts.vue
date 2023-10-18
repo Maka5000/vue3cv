@@ -1,4 +1,29 @@
-<script></script>
+<script>
+export default {
+
+    mounted() {
+        const contactsIcons = document.querySelectorAll("li > span");
+        if(localStorage.getItem("switchStatus")) {
+
+            if(localStorage.getItem("switchStatus") === 'false') {
+                contactsIcons.forEach(icon => {
+                    icon.style.filter = "invert(100%)"
+                });
+            } else {
+                contactsIcons.forEach(icon => {
+                    icon.style.filter = "invert(0)"
+                });
+            }
+            
+        } else {
+            contactsIcons.forEach(icon => {
+                icon.style.filter = "invert(0)"
+            });
+        }
+    }
+    
+}
+</script>
 <template>
     <div>
         <section>

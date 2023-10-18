@@ -55,6 +55,7 @@
         background-repeat: no-repeat;
         background-position: center;
         vertical-align: middle;
+        margin-right: 10px;
     }
 
     .russia {
@@ -66,6 +67,7 @@
         background-repeat: no-repeat;
         background-position: center;
         vertical-align: middle;
+        margin-right: 10px;
     }
 
     .english {
@@ -77,5 +79,6 @@
         background-repeat: no-repeat;
         background-position: center;
         vertical-align: middle;
+        margin-right: 10px;
     }
 </style>

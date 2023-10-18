@@ -12,6 +12,18 @@ export default {
 
             dialog.showModal();
         }
+    },
+
+    mounted() {
+        if(localStorage.getItem("switchStatus")) {
+            if(localStorage.getItem("switchStatus") === 'false') {
+                document.querySelector("div.settings-btn").style.filter = "invert(100%)"
+            } else {
+                document.querySelector("div.settings-btn").style.filter = "invert(0)"
+            }
+        } else {
+            document.querySelector("div.settings-btn").style.filter = "invert(0)"
+        }
     }
 }
 </script>
@@ -65,7 +77,7 @@ export default {
         height: 60px;
         position: fixed;
         z-index: 3;
-        background-color: blue;
+        background-color: var(--main-color);
         align-items: center;
         justify-content: space-between;
         padding-right: 10px;
@@ -88,11 +100,11 @@ export default {
 
     .burger span {
         display: block;
-        border-bottom: 4px solid white;
+        border-bottom: 4px solid var(--font-color);
     }
 
     .burger:hover {
-        opacity: 50%;
+        opacity: 35%;
     }
 
     .menu-container {
@@ -103,8 +115,8 @@ export default {
         left: 0;
         top: 100%;
         z-index: 2;
-        background-color: blue;
-        transform: translateY(-120%);
+        background-color: var(--main-color);
+        transform: translateY(-121%);
         pointer-events: none;
         transition: .2s all ease-in-out;
     }
@@ -124,10 +136,10 @@ export default {
 
     .menu-container button a {
         text-decoration: none;
-        color: white;
         display: inline-block;
         width: 100%;
         line-height: 50px;
+        color: var(--font-color);
     }
 
     .settings-btn {
@@ -139,7 +151,7 @@ export default {
     }
 
     .settings-btn:hover {
-        filter: invert(50%);
+        opacity: 35%;
     }
 }
 </style>

@@ -3,6 +3,16 @@
   import LeftPanel from "./components/LeftPanel.vue";
   import MiddlePanel from "./components/MiddlePanel.vue";
   import MenuBar from "./components/MenuBar.vue"
+
+  if(localStorage.getItem("switchStatus")) {
+    if(localStorage.getItem("switchStatus") === 'false') {
+      document.querySelector("html").classList.add("dark-mode")
+    } else {
+      document.querySelector("html").classList.remove("dark-mode")
+    }
+  } else {
+    document.querySelector("html").classList.remove("dark-mode")
+  }
 </script>
 
 <template>
