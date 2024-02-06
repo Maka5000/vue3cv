@@ -23,13 +23,14 @@
 
 <style scoped>
     .photo {
-        background-image: url("../assets/Photo/avatar.jpg");
+        background-image: url("../assets/Photo/author.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         position: relative;
         z-index: 1;
         box-shadow: 0 0 10px 0 var(--main-shadow);
+        background-color: white;
     }
 
     .photo-description {

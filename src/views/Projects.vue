@@ -30,6 +30,12 @@
                         <h3>SchoolPlatform</h3>
                     </a>
                 </li>
+                <li>
+                    <a href="https://maka5000.github.io/tictactoevue3/">
+                        <span class="tictactoe"></span>
+                        <h3>TicTacToe</h3>
+                    </a>
+                </li>
             </ul>
         </section>
     </div>
@@ -99,6 +105,9 @@
     .schoolPlatform {
         background-image: url("../assets/Photo/Projects_img/schoolPlatform.jpg");
         background-size: cover;
+    }
+    .tictactoe {
+        background-image: url("../assets/Photo/Projects_img/tictactoe.jpeg");
     }
 
     @media (max-width: 620px) {

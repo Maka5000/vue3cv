@@ -61,8 +61,11 @@ export default {
             })
 
             contactsIcons.forEach(icon => {
-                this.invertColor(icon)
+                if(icon.className !== "kazakh" && icon.className !== "russia" && icon.className !== "english") {
+                    this.invertColor(icon)
+                }
             });
+
 
             this.invertColor(langIcon)
             this.invertColor(fullSettingsBtn)
