@@ -81,6 +81,18 @@ export default {
                     element.style.filter = "invert(0)"
                 }
         }, 
+
+        downloadCV() {
+            fetch("http://localhost:5173/src/assets/docCV.pdf").then(async response => {
+                let fileBlob = await response.blob();
+
+                const link = document.createElement('a')
+                link.href = URL.createObjectURL(fileBlob)
+                link.download = "docCV.pdf"
+                link.click()
+                URL.revokeObjectURL(link.href)
+            })
+        }
     },
 
     data() {
@@ -154,7 +166,7 @@ export default {
         </li>
         <li>
             <button class="download-btn">
-                <router-link to="/download"></router-link>
+                <router-link to="/download" @click="downloadCV"></router-link>
             </button>
         </li>
     </ul>
