@@ -88,7 +88,7 @@ export default {
 
                 const link = document.createElement('a')
                 link.href = URL.createObjectURL(fileBlob)
-                link.download = "docCV.pdf"
+                link.download = "HasenovMT.pdf"
                 link.click()
                 URL.revokeObjectURL(link.href)
             })
