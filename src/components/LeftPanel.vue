@@ -166,9 +166,7 @@ export default {
             </button>
         </li>
         <li>
-            <button class="download-btn">
-                <router-link to="/download" @click="downloadCV"></router-link>
-            </button>
+            <button class="download-btn" @click="downloadCV"></button>
         </li>
     </ul>
     <dialog>
@@ -181,7 +179,7 @@ export default {
                     <b>{{ selectedLang }}</b>
                 </div>
                 <div v-else class="lang-selected">
-                    <b>English</b>
+                    <b>Русский</b>
                 </div>
                 <span class="lang-icon"></span>
             </div>
