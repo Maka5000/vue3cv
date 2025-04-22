@@ -27,14 +27,15 @@ const routes = [
         component : Skills
     },
     {
-        path : '/download',
+        path : '/download', 
         name : 'download',
         component : Skills
     },
 ]
 
 const router = createRouter({
-    history : createWebHistory(),
+    mode : "hash" ,
+    history : createWebHistory("/vue3cv/"),
     routes
 });
 

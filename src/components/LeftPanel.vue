@@ -83,7 +83,8 @@ export default {
         }, 
 
         downloadCV() {
-            fetch("http://localhost:5173/src/assets/docCV.pdf").then(async response => {
+            fetch("/vue3cv/src/assets/HasenovMT.pdf", {method : 'POST', headers : {'Content-Type' : 'application/json', Accept : 'application/pdf'}}).then(async response => {
+                console.log(await response)
                 let fileBlob = await response.blob();
 
                 const link = document.createElement('a')
